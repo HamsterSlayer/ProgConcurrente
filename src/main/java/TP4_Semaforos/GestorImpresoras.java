@@ -15,6 +15,8 @@ public class GestorImpresoras {
     Semaphore[] impresoras;
     
     public GestorImpresoras(int numImpresoras) {
+        //Se puede hacer varios semaforos binarios para pensar que cada uno es una impresora
+        //Tambien se puede hacer un semaforo con muchos permisos
         impresoras = new Semaphore[numImpresoras];
         
         for (int i = 0; i < impresoras.length; i++) {
