@@ -1,34 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package TP4_Semaforos;
-
-/**
- *
- * @author hamst
- */
+import java.util.Scanner;
+        
 public class fibonacci {
-    public static void main(String[] args) {
-        int resultado = fibonacci(5);
-        System.out.println(resultado);
+
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        
     }
-    
-    static int fibonacci(int posicion) {
-        int resultado = -1;
-        //Caso Base
-        if (posicion == 0) {
-            resultado = 1;
+
+    public static String pedirNombre(Scanner sc) {
+    String nombre = "";
+    boolean valido = false;
+
+    while (!valido) {
+        System.out.print("Ingrese el primer nombre del paciente: ");
+        nombre = sc.next();    // agarra solo la primera palabra
+        sc.nextLine();         // limpia el resto de la línea (por si puso más cosas)
+
+        if (nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")) {
+            valido = true;
+        } else {
+            System.out.println("El nombre solo puede contener letras y sin espacios. Intente de nuevo.");
         }
-        else if (posicion == 1) {
-            resultado = 1;
-        }
-        //Caso Recursivo
-        else {
-            //f(n) = f(n-1) + f(n-2)
-            resultado = fibonacci(posicion-1) + fibonacci(posicion-2);
-        }
-        return resultado;
     }
-    
+    return nombre;
+    }
 }

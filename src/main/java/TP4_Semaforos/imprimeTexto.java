@@ -14,7 +14,7 @@ public class imprimeTexto implements Runnable {
     String text;
     long duration;
     Semaphore sem;
-    Semaphore sem2;
+    Semaphore sem2; 
     
     public imprimeTexto(String text, long duration, Semaphore sem, Semaphore sem2){
         this.text = text;
